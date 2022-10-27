@@ -27,7 +27,11 @@
     }
 
     @include mobile {
-      padding-top: 20px;
+      padding: 20px 0 70px;
+
+        &:last-child {
+          padding-bottom: 0;
+        }
     }
   }
 
