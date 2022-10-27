@@ -1,7 +1,27 @@
 @import "utils";
 @import "fonts";
 @import "typography";
+@import "./page.scss";
+@import "./block.scss";
+@import "./select.scss";
 
-body {
-  background: $c-gray;
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul,
+li {
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
 }

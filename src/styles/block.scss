@@ -1,0 +1,349 @@
+.block {
+  display: flex;
+  flex-direction: column;
+
+  &--siteNotice {
+    margin-top: 70px;
+
+    @include iPad {
+      margin-top: 50px;
+    }
+
+    @include mobile {
+      margin-top: 30px;
+    }
+
+    @media (max-width: 650px) {
+      margin-top: 80px;
+    }
+  }
+
+  &--advertisingCompanies {
+    position: relative;
+    padding-top: 34px;
+
+    @include iPad {
+      padding-top: 24px;
+    }
+
+    @include mobile {
+      padding-top: 20px;
+    }
+  }
+
+  &--searchAgents,
+  &--telegram {
+    padding-top: 48px;
+
+    @include iPad {
+      padding-top: 36px;
+    }
+
+    @include mobile {
+      padding-top: 25px;
+    }
+  }
+
+  &__title {
+    @include h3;
+
+    &--advertisingСompanies {
+      position: relative;
+      width: max-content;
+      cursor: pointer;
+      transition: all 0.4s ease;
+
+      &::after {
+        content: url(../images/polygon.svg);
+        display: block;
+        position: absolute;
+        right: -13px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &--open {
+        &::after {
+          transform: rotate(180deg);
+          bottom: 0;
+        }
+      }
+    }
+  }
+
+  &__optionsBlock {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+    &--welcome,
+    &--news {
+      padding-top: 25px;
+
+      @include iPad {
+        padding-top: 18px;
+      }
+
+      @include mobile {
+        padding-top: 18px;
+      }
+    }
+
+    &--webinars {
+      padding-top: 30px;
+
+      @include iPad {
+        padding-top: 20px;
+      }
+    }
+
+    &--advertisingCompanies {
+      display: none;
+
+      &--open {
+        display: flex;
+        padding: 20px 0 30px;
+      }
+    }
+
+    &--privateMessages {
+      padding-top: 15px;
+
+      @media (max-width: 650px) {
+        padding-top: 50px;
+      }
+    }
+
+    &--searchBlock {
+      padding: 2px 0 20px;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+
+    @media (max-width: 650px) {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  &__options {
+    display: flex;
+    width: 48%;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    @media (max-width: 650px) {
+      width: 100%;
+    }
+  }
+
+  &__optionsName {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8rem;
+    color: #000;
+
+    &--privateMessages {
+      display: block;
+      width: max-content;
+    }
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+
+  &__switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 22px;
+    margin-top: 5px;
+
+    @media (max-width: 650px) {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &__checkbox {
+    display: none;
+  }
+  
+  &__slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 25px;
+    background-color: #e4e4e4;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+
+    &:before {
+      position: absolute;
+      content: "";
+      height: 19px;
+      width: 19px;
+      left: 1px;
+      bottom: 1px;
+      background-color: white;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+
+    &--checked {
+      background-color: $blue;
+
+      &::before {
+        -webkit-transform: translateX(19px);
+        -ms-transform: translateX(19px);
+        transform: translateX(19px);
+      }
+    }
+  }
+
+  &__period {
+    width: 32%;
+
+    @media (max-width: 650px) {
+      width: 80%;
+    }
+  }
+
+  &__info {
+    display: flex;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    margin-left: 5px;
+    background: url("../images/info.svg") no-repeat center;
+    transition: all 0.4s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 650px) {
+      display: none;
+    }
+  }
+
+  &__infoMessage {
+    opacity: 0;
+    background-color: #707070;
+    border-radius: 4px;
+    color: #e4e4e4;
+    margin-left: 30px;
+    width: 200px;
+    transition: opacity 0.4s ease;
+    padding: 0 7px;
+
+    &--active {
+      opacity: 1;
+    }
+
+    @include mobile {
+      position: absolute;
+      bottom: -20px;
+      left: 40px;
+    }
+
+    @media (max-width: 650px) {
+      opacity: 1;
+      position: relative;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      background-color: transparent;
+      color: #383838;
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+  &__themes {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 28px;
+    background-color: #ebebeb;
+    border-radius: 4px;
+    padding: 0 17px;
+    font-size: 12px;
+    color: #707070;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+
+    &:hover {
+      box-shadow: 0 1px 1.5px 0 rgba(103, 99, 82, 0.36);
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &--del {
+      display: none;
+    }
+
+    @include mobile {
+      width: 140px;
+      height: max-content;
+    }
+  }
+
+  &__themesDel {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: #707070;
+
+    @include mobile {
+      position: absolute;
+      right: 17px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__details {
+    position: absolute;
+    top: 0;
+    left: 45%;
+    color: $blue;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.4s ease;
+
+    &:hover {
+      border-color: $blue;
+    }
+
+    @include iPad {
+      top: 30px;
+      left: 0;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+}
+
+.block__checkbox:focus + .block__slider {
+  box-shadow: 0 0 1px $blue;
+}

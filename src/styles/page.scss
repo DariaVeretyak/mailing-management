@@ -1,0 +1,145 @@
+.page {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 160%;
+  color: #383838;
+  margin: 0;
+
+  &__conteiner {
+    display: flex;
+    flex-direction: column;
+    width: 1021px;
+    margin: 150px auto;
+
+    @include tablet {
+      width: 824px;
+      margin: 120px auto;
+    }
+
+    @include iPad {
+      width: 708px;
+      margin: 80px auto;
+    }
+
+    @include mobile {
+      width: 80%;
+      margin: 30px auto;
+      font-size: 12px;
+    }
+  }
+
+  &__title {
+    @include h1;
+  }
+
+  &__bodyText {
+    padding-top: 20px;
+    @include h2;
+
+    &--dialog {
+      text-align: center;
+    }
+  }
+
+  &__mainBlock {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+
+    @include mobile {
+      margin-top: 30px;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    gap: 20px;
+    padding-top: 50px;
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 213px;
+    height: 50px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 1px 1.5px 0 rgba(103, 99, 82, 0.36);
+
+    &--default {
+      background: #f0f6ff;
+      color: $blue;
+    }
+
+    &--saveChange {
+      background: $blue;
+      color: #fff;
+    }
+
+    &--dialog {
+      width: 120px;
+      height: 30px;
+      background: $blue;
+      color: #fff;
+
+      @include mobile {
+        width: 80px;
+      }
+    }
+
+    &:hover {
+      box-shadow: 0 3px 3.5px 0 rgba(103, 99, 82, 0.5);
+    }
+  }
+
+  &__dialog {
+    width: 350px;
+    height: 200px;
+    border: 2px solid $blue;
+    border-radius: 12px;
+    padding: 50px;
+
+    @include mobile {
+      width: 60%;
+      padding: 20px;
+    }
+  }
+
+  &__menuDialog {
+    display: flex;
+    justify-content: space-around;
+    z-index: 5;
+    padding: 0;
+  }
+
+  &__dialogForm {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    opacity: 1;
+    transition: all 0.4s ease;
+
+    &--close {
+      opacity: 0;
+    }
+  }
+
+  &__saveSuccess {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 200px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0;
+    transition: all 0.4s ease;
+
+    &--show {
+      opacity: 1;
+    }
+  }
+}
