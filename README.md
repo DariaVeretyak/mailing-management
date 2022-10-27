@@ -1,1 +1,2 @@
-# Base layout template with Gulp, SCSS and Stylelint
+# Mailing management - testTask
+[DEMO LINK](https://dariaveretyak.github.io/mailing-management/)
