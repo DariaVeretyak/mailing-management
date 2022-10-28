@@ -1,12 +1,5 @@
 'use strict';
 
-const infoBtn = document.querySelector('.block__info--privateMessages');
-const infoMessage = document.querySelector('.block__infoMessage');
-
-infoBtn.addEventListener('click', (ev) => {
-  infoMessage.classList.toggle('block__infoMessage--active');
-});
-
 const selectHeader = document.querySelectorAll('.select__header');
 const allItems = [ ...document.querySelectorAll('.select__item') ];
 const selectBody = document.querySelectorAll('.select__body');
@@ -30,7 +23,7 @@ selectBody.forEach(el => {
     const parent = ev.target.parentNode;
 
     parent.previousElementSibling.textContent = ev.target.textContent;
-    parent.classList.toggle('select__body--active');
+    parent.classList.remove('select__body--active');
   });
 });
 
@@ -110,3 +103,4 @@ yesAnswer.addEventListener('click', function() {
 notAnswer.addEventListener('click', function() {
   areYouSure.close();
 });
+
